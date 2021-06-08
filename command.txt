@@ -1,0 +1,5 @@
+go init <project-name>
+go get github.com/labstack/echo/v4
+GO111MODULE=on go get github.com/labstack/echo/v4
+go get go.mongodb.org/mongo-driver
+go get go.mongodb.org/mongo-driver/mongo
