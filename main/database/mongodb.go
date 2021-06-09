@@ -2,10 +2,11 @@ package database
 
 import (
 	"context"
-	"log"
-	"sync"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	"log"
+	"os"
+	"sync"
 )
 
 type manager struct {
@@ -15,6 +16,7 @@ type manager struct {
 
 var dbInstance *manager
 var onceManagerRun sync.Once
+var DB_URL = os.Getenv("DB_URL")
 
 func GetDmManager() *manager {
 	onceManagerRun.Do(func() {
